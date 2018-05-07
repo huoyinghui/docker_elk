@@ -1,0 +1,12 @@
+# This file is where you define your pipelines. You can define multiple.
+# For more information on multiple pipelines, see the documentation:
+#   https://www.elastic.co/guide/en/logstash/current/multiple-pipelines.html
+
+# - pipeline.id: nginx_log
+#   path.config: "/usr/share/logstash/pipeline/nginx_log"
+# - pipeline.id: comment_log
+#   path.config: "/usr/share/logstash/pipeline/comment_log"
+- pipeline.id: admin_log
+  path.config: "/usr/share/logstash/pipeline/admin_log"
+- pipeline.id: user_install
+  path.config: "/usr/share/logstash/pipeline/user_install"
