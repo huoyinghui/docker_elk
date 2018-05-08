@@ -4,4 +4,5 @@ output.elasticsearch:
   password: changeme
 
 setup.kibana:
-  host: "kinbana:5601"
+  host: "kibana:5601"
+setup.dashboards.enabled: true
