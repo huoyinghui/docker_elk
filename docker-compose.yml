@@ -54,6 +54,20 @@ services:
     depends_on:
       - elasticsearch
 
+  #apm server
+  apm_server:
+    build: apm_server/
+    volumes:
+      - ./apm_server/config/apm-server.yml:/usr/share/apm-server/apm-server.yml
+    ports:
+      - "8200:8200"
+    networks:
+      - elk
+      
+    depends_on:
+      - elasticsearch
+      - kibana
+
 networks:
 
   elk:
