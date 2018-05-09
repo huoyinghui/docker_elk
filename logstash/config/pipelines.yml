@@ -6,7 +6,7 @@
 #   path.config: "/usr/share/logstash/pipeline/nginx_log"
 # - pipeline.id: comment_log
 #   path.config: "/usr/share/logstash/pipeline/comment_log"
-- pipeline.id: admin_log
-  path.config: "/usr/share/logstash/pipeline/admin_log"
+# - pipeline.id: admin_log
+#   path.config: "/usr/share/logstash/pipeline/admin_log"
 - pipeline.id: user_install
   path.config: "/usr/share/logstash/pipeline/user_install"
