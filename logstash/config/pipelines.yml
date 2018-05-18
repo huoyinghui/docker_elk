@@ -10,3 +10,5 @@
 #   path.config: "/usr/share/logstash/pipeline/admin_log"
 - pipeline.id: user_install
   path.config: "/usr/share/logstash/pipeline/user_install"
+- pipeline.id: aegon_log
+  path.config: "/usr/share/logstash/pipeline/aegon_log"
