@@ -1,1 +1,0 @@
-FROM registry.pureapk.com/huoyinghui/crawler:debug
