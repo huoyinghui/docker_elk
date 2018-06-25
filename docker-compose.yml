@@ -2,14 +2,14 @@ version: '3'
 
 services:
 
-  redis:
-    build: db/redis/
-    volumes:
-      - ./docker/redis/data:/data
-    ports:
-      - "6379:6379"
-    networks:
-      - elk
+  #redis:
+  #  build: db/redis/
+  #  volumes:
+  #    - ./docker/redis/data:/data
+  #  ports:
+  #    - "6379:6379"
+  #  networks:
+  #    - elk
 
   elasticsearch:
     build: elasticsearch/
@@ -25,21 +25,21 @@ services:
     networks:
       - elk
 
-  logstash:
-    build: logstash/
-    volumes:
-      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
-      - ./logstash/config/pipelines.yml:/usr/share/logstash/config/pipelines.yml
-      - ./logstash/pipeline:/usr/share/logstash/pipeline
-    ports:
-      - "5000:5000"
-    environment:
-      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
-    networks:
-      - elk
-    depends_on:
-      - elasticsearch
-      - redis
+  # logstash:
+  #   build: logstash/
+  #   volumes:
+  #     - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
+  #     - ./logstash/config/pipelines.yml:/usr/share/logstash/config/pipelines.yml
+  #     - ./logstash/pipeline:/usr/share/logstash/pipeline
+  #   ports:
+  #     - "5000:5000"
+  #   environment:
+  #     LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+  #   networks:
+  #     - elk
+  #   depends_on:
+  #     - elasticsearch
+  #     - redis
   #es-head
 
   kibana:
@@ -55,18 +55,18 @@ services:
       - elasticsearch
 
   #apm server
-  apm_server:
-    build: apm_server/
-    volumes:
-      - ./apm_server/config/apm-server.yml:/usr/share/apm-server/apm-server.yml
-    ports:
-      - "8200:8200"
-    networks:
-      - elk
+  # apm_server:
+  #   build: apm_server/
+  #   volumes:
+  #     - ./apm_server/config/apm-server.yml:/usr/share/apm-server/apm-server.yml
+  #   ports:
+  #     - "8200:8200"
+  #   networks:
+  #     - elk
       
-    depends_on:
-      - elasticsearch
-      - kibana
+  #   depends_on:
+  #     - elasticsearch
+  #     - kibana
 
 networks:
 
